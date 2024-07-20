@@ -13,15 +13,30 @@
 	
 	Por otro lado la desviación de frecuencia es un parámetro que nos permite definir la constante de sensibilidad la cual nos indica la variación de frecuencia por unidad de voltio de la señal moduladora, siendo a su vez esta nuevo valor relevante para el calculo del indice de modulación o $\beta$ en la modulación FM la cual se define como: \\
 	\begin{equation}
-		\beta = \frac{\Delta f}{f_m}
+		\beta = \frac{\Delta f}{f_m} \label{eq:indice-modulacion}
 	\end{equation}
 	
 	
 	\section{Definir el índice de Modulación en FM e indicar cual es el índice usado en FM comercial}
+	Un parámetro en la modulación FM y el cual define en que medida varían una de las componentes a la señal portadora respecto a su amplitud, frecuencia o fase es el indice de modulación que de forma general para una portadora AM indica en que razón se tiene una variación de amplitud y de manera similar en la modulación FM la frecuencia o fase.
+	
+	En la modulación por angulo los parámetros de la portadora afectados por el indice de modulación son la frecuencia o fase y de forma particular en la modulación FM la señal de información se codifica en la frecuencia de la portadora para su transmisión, en \ref{eq:indice-modulacion} se define el indice de modulación que se encuentra en función de la desviación de frecuencia pico y la frecuencia de la señal de información o moduladora.
+	
+	Además el indice de modulación también se puede expresar en función de la desviación de frecuencia angular  $\Delta\omega$ y la frecuencia angular de la moduladora $\omega_m$
+	
+	\subsection{Indice de modulación usado en la FM comercial}
+	
+	En el ámbito comercial es necesaria la transmisión de información a gran escala y con gran fidelidad desde la generación hasta la recepción para tener un gran alcance se deben trabajar con un tipo de modulación cuya portadora permite la definición de una gran frecuencia angular sin que esto represente perdidas de información debido al ruido inherente al medio, esta peculiar condición se satisface mediante el uso de la modulación FM la cual permite transmitir una gran cantidad de información (mayor calidad en la información) debido al gran ancho de banda del cual puede hacer uso.
+	
+	En tal sentido para poder contar con este gran ancho de banda el indice de modulación $\beta$ con el cual se debe trabajar debe tener las características de una modulación BWFM y para lo cual este debe cumplir con la siguiente relación $\beta > 0.2$
 	
 	\section{Cual es el ancho de banda usado en la FM en el Perú}
 	
+	En ancho de banda comercial definido en Perú varía entre los 87.5 MHz a los 108 MHz que es el espectro designado para la transmisión FM siendo su ancho de banda equivalente a la diferencia entre la frecuencia de transmisión superior e inferior, por lo tanto $B_W = 20.5$ MHz
+	
 	\section{Qué relación tiene el voltaje (volumen) en la señal moduladora con el ancho de banda}
+	
+	
 	
 	\section{Como se genera la FM con un VCO (Oscilador Controlado por Voltaje)}
 	
