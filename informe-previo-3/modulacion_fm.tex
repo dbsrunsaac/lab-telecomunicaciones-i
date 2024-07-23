@@ -5,8 +5,6 @@
 \date{ Julio 2024}
 
 \begin{document}
-	\maketitle
-	\newpage
 	
 	\section{Definir la desviación de frecuencia en FM}
 	La desviación de frecuencia o desviación de frecuencia pico $\Delta$f es un parámetro FM que indica la variación en la frecuencia de la portadora en torno a una frecuencia especifica o central cuando el angulo de esta señal se ve alterado por una señal de información o moduladora, además como la variación de la frecuencia cuenta con ciertos limites constantes este parámetro $\Delta$f se puede considerar como la oscilación en frecuencia de la portadora.
@@ -32,14 +30,50 @@
 	
 	\section{Cual es el ancho de banda usado en la FM en el Perú}
 	
-	En ancho de banda comercial definido en Perú varía entre los 87.5 MHz a los 108 MHz que es el espectro designado para la transmisión FM siendo su ancho de banda equivalente a la diferencia entre la frecuencia de transmisión superior e inferior, por lo tanto $B_W = 20.5$ MHz
+	En ancho de banda comercial definido en Perú varía entre los 87.5 MHz a los 108 MHz que es el espectro designado para la transmisión FM siendo su ancho de banda equivalente a la diferencia entre la frecuencia de transmisión superior e inferior, por lo tanto $B_W = 20.5$ MHz.
 	
 	\section{Qué relación tiene el voltaje (volumen) en la señal moduladora con el ancho de banda}
 	
+	Durante la generación de señal modulada en FM se cuenta con diferentes procesos que involucran circuitos complejos como el uso de osciladores entre otros bloques utilizados apara variar la frecuencia de la señal portadora, este comportamiento se puede representar matemáticamente mediante las siguientes ecuaciones: \\
 	
+	De forma genérica se tiene que:
+	\begin{equation}
+		\phi = Acos\theta(t) \label{eq:ec-general-fm}
+	\end{equation}
+	Además se tiene que:
+	\begin{equation}
+		\theta(t) = \omega_m + K_pf(t) + \theta_0 \label{eq:ft-transferencia}
+	\end{equation}
+	Se debe considerar para una señal FM la señal de información f(t) se encuentra en relación a la integral de la frecuencia instantánea y esta a su vez se define como:
+	\begin{equation}
+		\omega_{i}(t) = \omega_c + K_ff(t) \label{eq:frecuencia}
+	\end{equation}
+	Reemplazando el valor de \ref{eq:frecuencia} \ref{eq:ft-transferencia} se tiene la siguiente relación:
+	\begin{equation}
+		\theta(t) = \omega_ct + \Delta\omega cos(\omega_mt)
+	\end{equation}
+	Donde la constante de proporcionalidad de frecuencia es equivalente a:
+	\begin{equation}
+		\Delta\omega = k_fa
+	\end{equation}
+	
+	Consecuentemente se tiene que $\theta(t)$ tendrá la siguiente relación matemática:
+	\begin{equation}
+		\theta(t) = \omega_ct + \int{\Delta\omega cos(\omega_mt)dx} + \theta_0 \label{eq:integral-ft}
+	\end{equation}
+	Integrando se obtiene la siguiente expresión
+	\begin{equation}
+		\theta(t) = \omega_ct + \frac{\Delta\omega}{\omega_m} sen(\omega_mt) + \theta_0 \label{eq:integral-ft-1}
+	\end{equation}
+	
+	Siendo así que de la ecuación \ref{eq:integral-ft-1} define el parámetro $\beta$ que el componente de la modulación FM que determina la variación de la señal portadora, establecido a su vez el ancho de banda de una señal FM, apreciando de esta forma una relación directa entre la amplitud de la señal portadora y los limites de trabajo en frecuencia para una portadora.
 	
 	\section{Como se genera la FM con un VCO (Oscilador Controlado por Voltaje)}
+	La generación de modulación en frecuencia (FM) utilizando un Oscilador Controlado por Voltaje (VCO) es un método común en comunicaciones electrónicas. En este sistema, el VCO genera una señal cuya frecuencia es directamente proporcional al voltaje de entrada aplicado. La señal moduladora, que contiene la información a transmitir, se aplica como el voltaje de control al VCO. A medida que el voltaje de la señal moduladora varía, la frecuencia de la señal de salida del VCO se desplaza de su frecuencia central (portadora) en proporción a la amplitud del voltaje modulador. Esta variación de frecuencia en la señal de salida produce la modulación en frecuencia, donde la frecuencia instantánea de la portadora varía de acuerdo con la amplitud de la señal moduladora, permitiendo así la transmisión de la información en el dominio de la frecuencia. El uso de un VCO para generar FM es eficiente y ampliamente utilizado en sistemas de comunicación como radios FM y enlaces de microondas.
 	
 	
 	\section{Según el PNAF cual es el rango de operación de la FM comercial}
+	Para las operaciones comerciales el Plan Nacional de Asignación de Frecuencias o PNAF estableció que el rango de frecuencias inalámbricas entre los 470 MHz y los 698 MHz, ancho de banda asignado las telecomunicaciones inalámbricas
+	
+	
 \end{document}
